@@ -71,7 +71,13 @@ class IndexView(tables.PagedTableMixin, tables.DataTableView):
             networks = []
             msg = _('Network list can not be retrieved.')
             exceptions.handle(self.request, msg)
-        return networks
+        new_network = []
+        for x in networks:
+            print(x.name)
+            if 'plsk' in x.name.lower() or 'plesk' in x.name.lower():
+                continue
+            new_network.append(x)
+        return new_network
 
 
 class DefaultSubnetWorkflowMixin(object):

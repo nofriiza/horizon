@@ -154,7 +154,12 @@ class KeystoneBackend(object):
             scoped_auth = domain_auth
             scoped_auth_ref = domain_auth_ref
         elif not scoped_auth_ref and not domain_auth_ref:
-            msg = _('You are not authorized for any projects or domains.')
+            if "jkt-2" or "wjv-2" in auth_url:
+                msg = _("It looks like you don't have project in jakarta-2/west-java-2. Please contact support@biznetgio.com for further information.")
+            if "btn-1" in auth_url:
+                msg = _("It looks like you don't have project in banten-1 Please contact support@biznetgio.com for further information.")
+            else :
+                msg = _("It looks like you don't have project in jakarta-1/west-java-1, please select jakarta-2 or west-java-2 or btn-1.")
             raise exceptions.KeystoneNoProjectsException(msg)
 
         # Check expiry for our new scoped token.

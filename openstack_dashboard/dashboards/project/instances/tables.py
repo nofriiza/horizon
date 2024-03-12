@@ -1301,7 +1301,7 @@ class InstancesTable(tables.DataTable):
                        EditPortSecurityGroups,
                        ConsoleLink, LogLink,
                        RescueInstance, UnRescueInstance,
-                       TogglePause, ToggleSuspend, ToggleShelve,
+                       TogglePause, ToggleSuspend,
                        ResizeLink, LockInstance, UnlockInstance,
                        SoftRebootInstance, RebootInstance,
                        StopInstance, RebuildInstance, DeleteInstance)

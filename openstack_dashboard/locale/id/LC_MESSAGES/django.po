@@ -696,6 +696,9 @@ msgstr ""
 msgid "Another Plugin-based Panel"
 msgstr "Another Plugin-based Panel"
 
+msgid "Please keep in mind that when you create a region/public IP from Horizon, your billing cycle will be set to reserved/monthly. If you prefer to be charged on hourly basis, please order your region/public IP using portal.biznetgio.com"
+msgstr "Ketika Anda membuat region/public IP melalui Horizon, siklus tagihan layanan Anda akan ditagihkan secara bulanan. Jika Anda ingin menggunakan tagihan berbasis jam, Anda dapat melakukan pemesanan melalui portal.biznetgio.com"
+
 msgid "Any"
 msgstr "Any (apapun)"
 

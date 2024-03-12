@@ -233,6 +233,8 @@ class JSONView(View):
         console_type = settings.CONSOLE_TYPE
         # lowercase of the keys will be used at the end of the console URL.
         for server in servers:
+            if server.metadata:
+                continue
             server_data = {'name': server.name,
                            'status': self.trans.instance[server.status],
                            'original_status': server.status,
@@ -276,6 +278,8 @@ class JSONView(View):
                 target={'network:tenant_id': getattr(network,
                                                      'tenant_id', None)}
             )
+            if 'plsk' in network.name.lower() or 'plesk' in network.name.lower():
+                continue
             obj = {'name': network.name_or_id,
                    'id': network.id,
                    'subnets': [{'id': subnet.id,
@@ -334,12 +338,17 @@ class JSONView(View):
         except Exception:
             neutron_routers = []
 
+        new_neutron_routers = []
+        for x in neutron_routers:
+            if 'plsk' in x.name.lower() or 'plesk' in x.name.lower():
+                continue
+            new_neutron_routers.append(x)
         routers = [{'id': router.id,
                     'name': router.name_or_id,
                     'status': self.trans.router[router.status],
                     'original_status': router.status,
                     'external_gateway_info': router.external_gateway_info}
-                   for router in neutron_routers]
+                   for router in new_neutron_routers]
         self.add_resource_url('horizon:project:routers:detail', routers)
         return routers
 

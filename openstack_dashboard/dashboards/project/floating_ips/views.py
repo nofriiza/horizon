@@ -148,4 +148,10 @@ class IndexView(tables.DataTableView):
                     LOG.info("Error fetching port forwardings for floating IP"
                              " %s: %s", ip.id, e)
 
-        return floating_ips
+        fix_floating_ips = []
+        for floating_ip in floating_ips:
+            if floating_ip.description != 'PLSK':
+                fix_floating_ips.append(floating_ip)
+
+        # return floating_ips
+        return fix_floating_ips

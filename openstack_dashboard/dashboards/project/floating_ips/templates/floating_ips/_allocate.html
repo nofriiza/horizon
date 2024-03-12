@@ -1,6 +1,12 @@
 {% extends "horizon/common/_modal_form.html" %}
 {% load horizon i18n bootstrap %}
 
+{% block modal-alert %}
+<div class="alert alert-danger" role="alert">
+    {% trans "Please keep in mind that when you create a region/public IP from Horizon, your billing cycle will be set to reserved/monthly. If you prefer to be charged on hourly basis, please order your region/public IP using portal.biznetgio.com" %}
+</div>
+{% endblock %}
+
 {% block modal-body-right %}
 <div class="quota-dynamic">
   <h3>{% trans "Description:" %}</h3>

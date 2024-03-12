@@ -81,4 +81,9 @@ class IndexView(tables.DataTableView):
             images = []
             self._prev = self._more = False
             exceptions.handle(self.request, _("Unable to retrieve images."))
-        return images
+        fix_images = []
+        for image in images:
+            messages.info(image.name)
+            if not ("Plesk" in image.name):
+                fix_images.append(image)
+        return fix_images
