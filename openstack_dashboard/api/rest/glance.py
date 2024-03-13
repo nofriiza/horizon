@@ -157,9 +157,14 @@ class Images(generic.View):
 
         images, has_more_data, has_prev_data = api.glance.image_list_detailed(
             request, filters=filters, **kwargs)
+        
+        fix_images = []
+        for image in images:
+            if ("Plesk" not in image.name):
+                fix_images.append(image)
 
         return {
-            'items': [i.to_dict() for i in images],
+            'items': [i for i in fix_images],
             'has_more_data': has_more_data,
             'has_prev_data': has_prev_data,
         }

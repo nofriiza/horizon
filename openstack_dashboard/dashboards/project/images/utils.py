@@ -97,7 +97,7 @@ def get_available_images(request, project_id=None, images_cache=None):
     final_images = []
     for image in images:
         if image.id not in image_ids and \
-                image.container_format not in ('aki', 'ari'):
+                image.container_format not in ('aki', 'ari') and not("PLESK" in image.name):
             image_ids.append(image.id)
             final_images.append(image)
     return final_images

@@ -159,6 +159,6 @@ class AuditTab(policy.PolicyTargetMixin, tabs.TableTab):
 
 class InstanceDetailTabs(policy.PolicyTargetMixin, tabs.DetailTabsGroup):
     slug = "instance_details"
-    tabs = (OverviewTab, InterfacesTab, LogTab, ConsoleTab, AuditTab)
+    tabs = (OverviewTab, InterfacesTab, ConsoleTab, LogTab, AuditTab)
     sticky = True
     policy_rules = (("compute", "os_compute_api:os-consoles:show"),)

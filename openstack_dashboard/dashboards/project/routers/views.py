@@ -60,10 +60,18 @@ class IndexView(tables.DataTableView):
 
         ext_net_dict = self._list_external_networks()
 
+        new_routers = []
+        print(routers)
         for r in routers:
+            if 'plsk' in r.name.lower() or 'plesk' in r.name.lower():
+                print("di skip")
+                print(r.name)
+                continue
             r.name = r.name_or_id
             self._set_external_network(r, ext_net_dict)
-        return routers
+            new_routers.append(r)
+        print(new_routers)
+        return new_routers
 
     def get_data(self):
         routers = self._get_routers()

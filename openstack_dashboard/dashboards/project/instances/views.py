@@ -175,7 +175,13 @@ class IndexView(tables.PagedTableMixin, tables.DataTableView):
                                                                  instance,
                                                                  flavor_dict)
 
-        return instances
+        fix_instances = []
+        for instance in instances:
+            instance_metadata = instance.metadata
+            if not instance_metadata:
+                fix_instances.append(instance)
+
+        return fix_instances
 
     def _populate_image_info(self, instance, image_dict, volume_dict):
         if not hasattr(instance, 'image'):
