@@ -165,7 +165,9 @@ INSTALLED_APPS = [
     'openstack_auth',
 ]
 
-AUTHENTICATION_BACKENDS = ('openstack_auth.backend.KeystoneBackend',)
+AUTHENTICATION_BACKENDS = ('openstack_dashboard.auth.backend.TwoFactorAuthBackend',)
+TOTP_DEBUG = False
+TOTP_VALIDITY_PERIOD = 30
 AUTH_USER_MODEL = 'openstack_auth.User'
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
 
