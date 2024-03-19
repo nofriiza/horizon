@@ -322,8 +322,8 @@ msgid "Sell Puppy"
 msgid_plural "Sell Puppies"
 msgstr[0] "Menjual Puppies"
 
-msgid "Sign In"
-msgstr "Mendaftar"
+msgid "Connect"
+msgstr "Masuk"
 
 #. Translators: test code, don't really have to translate
 msgid "Sold Puppy"
