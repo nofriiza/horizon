@@ -1,5 +1,5 @@
 PANEL_DASHBOARD = 'project'
-PANEL_GROUP = 'default'
+PANEL_GROUP = 'compute'
 PANEL = 'api_access'
 
 ADD_PANEL = \

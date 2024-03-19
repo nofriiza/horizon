@@ -8,3 +8,5 @@ PANEL_GROUP = 'compute'
 # Python panel class of the PANEL to be added.
 ADD_PANEL = ('openstack_dashboard.dashboards.project.server_groups'
              '.panel.ServerGroups')
+
+DISABLED = True

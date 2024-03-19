@@ -6,3 +6,5 @@ PANEL_GROUP = 'federation'
 PANEL_GROUP_NAME = _('Federation')
 # The slug of the dashboard the PANEL_GROUP associated with. Required.
 PANEL_GROUP_DASHBOARD = 'identity'
+
+DISABLED = True
