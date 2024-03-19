@@ -1,6 +1,6 @@
 {% if regions.support %}
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="region-title">{{ regions.current.name }}</span>
+    <span class="region-title">Region : {{ regions.current.name }}</span>
     <span class="fa fa-caret-down"></span>
   </a>
   <ul id="region_list" class="dropdown-menu dropdown-menu-right">
@@ -8,8 +8,7 @@
      {% if region.name != regions.current.name %}
        <li>
          <!-- <a class="ajax-modal" href="{% url 'login' %}?region={{ region.endpoint|urlencode }}&is_modal"> -->
-          <a href="#" onclick="gio_login('{{ forloop.counter0 }}')"></a>
-           {{ region.name }}
+          <a href="#" onclick="gio_login('{{ forloop.counter0 }}')">{{ region.name }}</a>
          </a>
        </li>
      {% endif %}
